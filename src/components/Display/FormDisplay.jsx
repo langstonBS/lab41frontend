@@ -1,36 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { postCereal} from '../../service/cerealService'
 
 
 function FormDisplay() {
 
-  state = {}
+  const [cerealName, setCerealName] = useState('');
+  const [cerealThoughs, setCerealThoughs] = useState('');
+  const [cerealRatings, setCerealRatings] = useState('');
 
-  handleSubmit = event => {
-    event.preventDefault();
-    postCereal(this.state)
+  const handleChange = ({target}) => {
+    if(target.cerealName === 'cerealName') setCerealName(target.value);
+    if(target.cerealThoughs === 'cerealThoughs') setCerealThoughs(target.value);
+    if(target.cerealRatings === 'cerealRatings') setCerealRatings(target.cerealRatings)
   }
 
-
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  const handleSubmit = event => {
+    event.preventDefault();
+    postCereal(cerealName,cerealThoughs,cerealRatings)
   }
 
   return (
     <div>
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           <h2>add a Cereal and rate it</h2>
         </label>
-        <input input type="text" value={this.state.cerealName} onChange={this.handleChange} ></input>
+        <input
+          input type="text"
+          value={cerealName}
+          onChange={handleChange} />
         <label>
           <h4>Talk about it</h4>
         </label>
-        <textarea type='text' value={this.state.cerealThoughs} onChange={this.handleChange} ></textarea>
+        <textarea
+          type='text'
+          value={cerealThoughs}
+          onChange={handleChange} >
+          </textarea>
         <label>
           <h4>Rate it</h4>
         </label>
-        <input type='number' value={this.state.cerealRatings} onChange={this.handleChange}></input>
+        <input type='number'
+          value={cerealRatings}
+          onChange={handleChange} />
         <br></br>
         <br></br>
         <button>Submit</button>

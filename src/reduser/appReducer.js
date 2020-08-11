@@ -1,5 +1,5 @@
 export const initialState = {
-cereal:null
+cereal:[]
   }
 
 export default function reducer(state, action) {

@@ -11,6 +11,10 @@ const AppProvider = ({ children }) => {
     getCereal()
       .then(cereal => dispatch({ type: 'SET_CEREAL', payload: cereal }));
   }, [])
+  
+  console.log(state)
+
+
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

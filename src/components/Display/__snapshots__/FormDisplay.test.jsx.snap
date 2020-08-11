@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      <h2>
+        add a Cereal and rate it
+      </h2>
+    </label>
+    <input
+      input={true}
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label>
+      <h4>
+        Talk about it
+      </h4>
+    </label>
+    <textarea
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label>
+      <h4>
+        Rate it
+      </h4>
+    </label>
+    <input
+      onChange={[Function]}
+      type="number"
+      value=""
+    />
+    <br />
+    <br />
+    <button>
+      Submit
+    </button>
+  </form>
+</div>
+`;
