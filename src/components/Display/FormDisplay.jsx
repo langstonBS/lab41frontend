@@ -16,7 +16,7 @@ function FormDisplay() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    postCereal(cerealName,cerealThoughs,cerealRatings)
+    postCereal(cerealName, cerealThoughs, cerealRatings)
   }
 
   return (
@@ -26,7 +26,8 @@ function FormDisplay() {
           <h2>add a Cereal and rate it</h2>
         </label>
         <input
-          input type="text"
+          type="text"
+          name="cerealName"
           value={cerealName}
           onChange={handleChange} />
         <label>
@@ -34,14 +35,17 @@ function FormDisplay() {
         </label>
         <textarea
           type='text'
+          name="cerealThoughs"
           value={cerealThoughs}
           onChange={handleChange} >
           </textarea>
         <label>
           <h4>Rate it</h4>
         </label>
-        <input type='number'
+        <input
+          type='number'
           value={cerealRatings}
+          name="cerealRatings"
           onChange={handleChange} />
         <br></br>
         <br></br>
